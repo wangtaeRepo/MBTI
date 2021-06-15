@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ykck.mbti.dao.CategoryDao">
@@ -5,3 +6,31 @@
     select * from member
 </select>
 </mapper>
+=======
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ykck.mbti.dao.CategoryDao">
+
+<select id="getCategoryList" resultType="com.ykck.mbti.dto.Category">
+    select  category_id from Category
+</select>
+
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.ykck.mbti.dao.CategoryDao">
+
+<select id="getCategoryList" resultType="com.ykck.mbti.dto.Category">
+    select * from member
+</select>
+
+>>>>>>> 5e120bf5b4b11935d49fc4b209c21c03db2bca57
+</mapper>
+>>>>>>> 87b4bd9498f18be783c3587a30cf60f25db92c25

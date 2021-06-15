@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{/layout/index-layout :: setContent(~{this::content})}">
+    <th:block th:fragment="content">
+       <h1>All Products</h1>
+       <div class="list con">
+    <ul class="row">
+        <li class="cell">
+            <div class="img-box"><img src="./images/products/bone1.jpg" alt=""></div>
+            <div class="product-name">칼슘프리미엄</div>
+            <div class="product-price">39000</div>
+            <div class="product-PerDay">30일분</div>
+            <div class="product-Quantity">120정</div>
+           </li>
+           
+   
+        <li class="cell">
+            <div class="img-box"><img src="./images/products/bone2.jpg" alt=""></div>
+            <div class="product-name">비너지칼마디</div>
+            <div class="product-price">38000</div>
+            <div class="product-PerDay">30일분</div>
+            <div class="product-Quantity">120정</div>
+           </li>   
+           
+         <li class="cell">
+            <div class="img-box"><img src="./images/products/bone2.jpg" alt=""></div>
+            <div class="product-name">관절활작</div>
+            <div class="product-price">55000</div>
+            <div class="product-PerDay">30일분</div>
+            <div class="product-Quantity">30정</div>
+           </li>     
+           
+	     <li class="cell">
+            <div class="img-box"><img src="./images/products/bone2.jpg" alt=""></div>
+            <div class="product-name">관절활작</div>
+            <div class="product-price">55000</div>
+            <div class="product-PerDay">30일분</div>
+            <div class="product-Quantity">30정</div>
+           </li>     
+        </ul>
+</div>
+    </th:block>
+</th:block>
+</html>
+
+

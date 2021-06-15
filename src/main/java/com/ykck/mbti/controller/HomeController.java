@@ -32,4 +32,10 @@ public class HomeController {
         return "survey";
     }
     
+    @GetMapping("/products")
+    public String products(){
+
+        return "product/product";
+    }
+    
 }

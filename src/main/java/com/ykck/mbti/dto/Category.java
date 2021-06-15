@@ -10,6 +10,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Category{
-    private int categoryId;
-    private String categoryName;
+    private int category_Id;
+    private String category_Name;
 }

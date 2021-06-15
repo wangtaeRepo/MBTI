@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.ykck.mbti.controller;
 
 import java.util.List;

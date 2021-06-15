@@ -6,7 +6,7 @@
 <mapper namespace="com.ykck.mbti.dao.CategoryDao">
 
 <select id="getCategoryList" resultType="com.ykck.mbti.dto.Category">
-    select * from member
+    select  category_id from Category
 </select>
 
 </mapper>

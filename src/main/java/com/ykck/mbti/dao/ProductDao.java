@@ -11,5 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductDao {
     public List<Product> getProductsList();
+
+    public void insertProduct(Product product);
+
     
 }

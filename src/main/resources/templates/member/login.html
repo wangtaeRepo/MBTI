@@ -2,7 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{/layout/index-layout :: setContent(~{this::content})}">
     <th:block th:fragment="content">
-       <h1>login</h1>
+        <style>
+            *{
+                font-family: sans-serif;
+            }
+        </style>
+        <div>
+            <center>
+                <h1>로그인</h1>
+                <label for="name">아이디 : <input type="text" id="id" name="id"></label> <br />
+                <label for="name">비밀번호 : <input type="text" id="pass" name="pass"></label> <br />
+                <input type="submit" value="로그인" onclick="loginOn()"> <br />
+                <input type="submit" value="회원가입" onclick="loginOn()">
+                <th:onclick="'location.href=\''+ @{${/signup}} + '\''"></th:onclick>
+            </center>
+        </div>    
     </th:block>
-</th:block>
+</th:block> 
 </html>

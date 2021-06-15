@@ -14,8 +14,12 @@ public class ProductService {
     ProductDao productDao;
 
     public List<Product> getProductsList() {
-        return productDao.getProductsList();//test
+
+        return productDao.getProductsList();
     }
 
-   
+    public void insertProduct(Product product) {
+        productDao.insertProduct(product);
+    }
+
 }

@@ -17,9 +17,13 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login(){
-
         return "member/login";
     }
+    
+    @GetMapping("/sign")
+    public String sign(){
+        return "member/sign";
+    }   
 
     @GetMapping("/cart")
     public String cart(){

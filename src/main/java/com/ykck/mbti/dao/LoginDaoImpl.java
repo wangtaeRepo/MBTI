@@ -14,7 +14,7 @@ public class LoginDaoImpl implements LoginDao {
     @Autowired
     private SqlSession sqlSession;
 
-    final private String nameSpace="com.ykck.mbti.dao.LoginDao";
+    private String nameSpace="com.ykck.mbti.dao.LoginDao";
 
     @Override
     public String login(String member_Id){  

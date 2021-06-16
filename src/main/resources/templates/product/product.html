@@ -18,16 +18,19 @@
     <div class="row">
 
       <tr th:each="products : ${products}">
+        
         <div class="col-md-3 col-sm-3">
           <div style="border-radius: 1rem; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 20px -11px #000000;">
-              <div class="service-img mb10" ><a href="product-detail"><img src="${products.imageurl}" class="img-responsive"style="border-top-left-radius: 1rem; border-top-right-radius: 1rem; " alt="" ></a></div>
+              <!-- <div class="service-img mb10" ><a href="product-detail"><img th:src="${products.imageUrl}" class="img-responsive"style="border-top-left-radius: 1rem; border-top-right-radius: 1rem; " alt="" ></a></div> -->
+              <div class="service-img mb10" ><a href="product-detail"><img th:src= '@{/mbti/getImage(imageName=${products.imageUrl})}' class="img-responsive"style="border-top-left-radius: 1rem; border-top-right-radius: 1rem; " alt="" ></a></div>
+
               <div class="mr-3" style=" padding: 6%;">
                 <h3><a href="#" class="heading-title" > <td th:text= "${products.product_Name}"></td> </a></h3>
                 
-                <p1><td th:text= "${products.corporate}"></td></p1>
                 <div style="text-align: right;">
-                  <td th:text= "${products.quantity}"></td>정 <td th:text= "${products.perDay}"></td>일분
+                  <p1><td th:text= "${products.quantity}"></td>정 <td th:text= "${products.perDay}"></td>일분</p1>
                 </div>
+                <p1><td th:text= "${products.corporate}"></td></p1>
                  
                 <h3><td th:text= "${products.price}"></td>원</h3>
               </div>

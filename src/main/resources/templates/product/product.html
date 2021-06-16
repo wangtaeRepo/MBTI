@@ -2,45 +2,75 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{/layout/index-layout :: setContent(~{this::content})}">
     <th:block th:fragment="content">
-       <h1>All Products</h1>
-       <div class="list con">
-    <ul class="row">
-        <li class="cell">
-            <div class="img-box"><img src="./images/products/bone1.jpg" alt=""></div>
-            <div class="product-name">ƒÆΩ∑«¡∏ÆπÃæˆ</div>
-            <div class="product-price">39000</div>
-            <div class="product-PerDay">30¿œ∫–</div>
-            <div class="product-Quantity">120¡§</div>
-           </li>
-           
-   
-        <li class="cell">
-            <div class="img-box"><img src="./images/products/bone2.jpg" alt=""></div>
-            <div class="product-name">∫Ò≥ ¡ˆƒÆ∏∂µ</div>
-            <div class="product-price">38000</div>
-            <div class="product-PerDay">30¿œ∫–</div>
-            <div class="product-Quantity">120¡§</div>
-           </li>   
-           
-         <li class="cell">
-            <div class="img-box"><img src="./images/products/bone2.jpg" alt=""></div>
-            <div class="product-name">∞¸¿˝»∞¿€</div>
-            <div class="product-price">55000</div>
-            <div class="product-PerDay">30¿œ∫–</div>
-            <div class="product-Quantity">30¡§</div>
-           </li>     
-           
-	     <li class="cell">
-            <div class="img-box"><img src="./images/products/bone2.jpg" alt=""></div>
-            <div class="product-name">∞¸¿˝»∞¿€</div>
-            <div class="product-price">55000</div>
-            <div class="product-PerDay">30¿œ∫–</div>
-            <div class="product-Quantity">30¡§</div>
-           </li>     
-        </ul>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 text-center">
+        <div class="page-caption">
+          <h1 class="page-title">Service List</h1>
+        </div>
+      </div>
+    </div>
+  </div> -->
 </div>
-    </th:block>
+<!-- /.page header -->
+<div class="content">
+  <div class="container">
+    <div class="row">
+
+      <tr th:each="products : ${products}">
+        <div class="col-md-3 col-sm-3">
+          <div style="border-radius: 1rem; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 20px -11px #000000;">
+              <div class="service-img mb10" ><a href="product-detail"><img src="/images/service-1.jpg" class="img-responsive"style="border-top-left-radius: 1rem; border-top-right-radius: 1rem; " alt="" ></a></div>
+              <div class="mr-3" style=" padding: 6%;">
+                <h3><a href="#" class="heading-title" > <td th:text= "${products.product_Name}"></td> </a></h3>
+                <td th:text= "${products.quantity}"></td> <td th:text= "${products.perDay}"></td>
+                 
+                <p><td th:text= "${products.corporate}"></td></p>
+                <h3><td th:text= "${products.price}"></td>Ïõê</h3>
+              </div>
+              <!-- <a href="service-detail.html" class="btn-link">Read More</a>  -->
+            </div>
+        </div>
+      </tr>
+        
+
+
+        
+        
+
+        
+    </div>
+
+    <!-- <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="service-block text-center">
+              <div class="service-img mb30"><a href="service-detail.html" class="imghover"><img src="images/service-4.jpg" class="img-responsive" alt=""></a></div>
+              <h2><a href="#" class="heading-title">Heart Conditions Treated</a></h2>
+              <p>Donec tempus eu orci non vestiliquam tristique dapibus felisid veellentesque vitae rutrum amet libero luctuvolutpat commodo tellus. </p>
+              <a href="service-detail.html" class="btn-link">Read More</a> 
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+          <div class="service-block text-center">
+              <div class="service-img mb30"><a href="service-detail.html" class="imghover"><img src="images/service-5.jpg" class="img-responsive" alt=""></a></div>
+              <h2><a href="#" class="heading-title">Vein Clinic Services</a></h2>
+              <p> Nullam tincidorci vitae efficitur molestie nisl tortor eleifend ieu bibendum metus risus sitamet eros uspendisse acraesent doamet ipsum. </p>
+              <a href="service-detail.html" class="btn-link">Read More</a> 
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+          <div class="service-block text-center">
+              <div class="service-img mb30"><a href="service-detail.html" class="imghover"><img src="images/service-6.jpg" class="img-responsive" alt=""></a></div>
+              <h2><a href="#" class="heading-title">Diagonstic Cardiac</a></h2>
+              <p>Fusce ultricies turpis et tortor portaid vestibulum augue venena hac habitasse platea dict umst squec lacinia justo.</p>
+              <a href="service-detail.html" class="btn-link">Read More</a> 
+            </div>
+        </div>
+    </div> -->
+  </div>
+</div>
+ </th:block>
 </th:block>
 </html>
-
-

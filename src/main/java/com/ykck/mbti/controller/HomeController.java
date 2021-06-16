@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.ykck.mbti.dto.Category;
 import com.ykck.mbti.service.CategoryService;
+import com.ykck.mbti.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,10 @@ public class HomeController {
 
     @Autowired
     CategoryService categoryService;
+    
+    @Autowired
+    ProductService productService;
+
 
     @GetMapping("/home")
     public String home(){
@@ -45,11 +50,7 @@ public class HomeController {
         return "survey";
     }
     
-    @GetMapping("/products")
-    public String products(){
-
-        return "product/service-list";
-    }
+    
     
 }
 

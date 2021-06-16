@@ -35,6 +35,6 @@ public class ApiController {
     @GetMapping("/products")
     public List<Product> getProductsList(){
 
-        return productService.getProductsList();
+        return productService.getProductList();
     }
 }

@@ -56,9 +56,12 @@ Last change:        17/12/2016
 ------------------------------------------------------------------*/
 
 body{ -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 16px;
-  background-color: #fff; font-family: 'Roboto', sans-serif; color: #839290;
+  background-color: #fff; font-family: "jua"; color: #839290;
    line-height: 1.6; font-weight: 400;}
-h1,h2,h3,h4,h5,h6{font-family: 'Adamina', serif; margin: 0; padding: 0; 
+   @font-face{
+   src:url("../fonts/BMJUA_ttf.ttf");
+   font-family:"jua"}
+h1,h2,h3,h4,h5,h6{font-family: "jua"; margin: 0; padding: 0; 
 margin-bottom: 10px; color: #2e3433; font-weight: 400;}
 h1 {font-size: 30px}
 h2 {font-size: 20px;}
@@ -316,7 +319,7 @@ color: rgb(59, 59, 59); text-transform: uppercase; font-weight: 600; letter-spac
 #navigation > ul > li.has-sub > a {padding-right: 10px;}
 /*#navigation > ul > li.has-sub > a:after {position: absolute; top: 22px; right: 11px; width: 8px; height: 2px; 
   display: block; background: #dddddd; content: '';}*/
-#navigation > ul > li.has-sub > a:before {position: absolute; right: 14px; font-family: FontAwesome; content: "\f107";
+#navigation > ul > li.has-sub > a:before {position: absolute; right: 14px; font-family: "jua"; content: "\f107";
   -webkit-transition: all .25s ease; -moz-transition: all .25s ease; -ms-transition: all .25s ease;
   -o-transition: all .25s ease; transition: all .25s ease;}
 #navigation > ul > li:before {position: absolute; right: 0px; top: 15px; 

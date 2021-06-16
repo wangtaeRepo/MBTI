@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface ProductDao {
-    public List<Product> getProductsList();
+    public List<Product> getProductList();
 
     public void insertProduct(Product product);
 

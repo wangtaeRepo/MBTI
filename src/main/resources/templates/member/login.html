@@ -7,19 +7,19 @@
       <div>
         <center>
           <h1>로그인</h1>
-          <form th:action="@{/login}" th:object="${loginForm}" method="post">
-            <label for="username">Username</label>
+          <form th:action="@{login}" th:object="${loginDto}" method="post">
+            <label for="member_Id">Username</label>
             <input
               type="text"
-              id="username"
-              name="username"
+              id="member_Id"
+              name="member_Id"
               autofocus="autofocus"
             />
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" />
             <br />
-            <input type="submit" value="Logs In" />
+            <input type="submit" value="LogIn" />
           </form>
 
           <!-- <label for="name">아이디 : <input type="text" id="id" name="id"></label> <br />

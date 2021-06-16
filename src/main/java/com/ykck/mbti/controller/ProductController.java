@@ -31,5 +31,49 @@ public class ProductController {
 		model.addAttribute("products", products);
 		return "product/product";
 	}
+	
+	@GetMapping("/Liverproducts")
+	public String liverproducts(Model model) {
+		List<Product> products = productService.getLiverList();
+		System.out.println(products);
+		model.addAttribute("products", products);
+		return "product/service-list";
+	}
+	
+	@GetMapping("/Exerciseproducts")
+	public String exerciseproducts(Model model) {
+		List<Product> products = productService.getExerciseList();
+		model.addAttribute("products", products);
+		return "product/service-list";
+	}
+	
+	@GetMapping("/Brainproducts")
+	public String brainproducts(Model model) {
+		List<Product> products = productService.getBrainList();
+		model.addAttribute("products", products);
+		return "product/service-list";
+	}
+	
+	@GetMapping("/Stomachproducts")
+	public String stomachproducts(Model model) {
+		List<Product> products = productService.getStomachList();
+		model.addAttribute("products", products);
+		return "product/service-list";
+	}
+	
+	@GetMapping("/Eyeproducts")
+	public String eyeproducts(Model model) {
+		List<Product> products = productService.getEyeList();
+		model.addAttribute("products", products);
+		return "product/service-list";
+	}
+	
+	@GetMapping("/Boneproducts")
+	public String boneproducts(Model model) {
+		List<Product> products = productService.getBoneList();
+		model.addAttribute("products", products);
+		return "product/service-list";
+	}
+	
 
 }

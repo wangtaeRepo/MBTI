@@ -14,5 +14,17 @@ public interface ProductDao {
 
     public void insertProduct(Product product);
 
+	public List<Product> getLiverList();
+
+	public List<Product> getExerciseList();
+
+	public List<Product> getBrainList();
+
+	public List<Product> getStomachList();
+
+	public List<Product> getEyeList();
+
+	public List<Product> getBoneList();
+
     
 }

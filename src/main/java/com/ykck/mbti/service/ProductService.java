@@ -22,4 +22,28 @@ public class ProductService {
         productDao.insertProduct(product);
     }
 
+	public List<Product> getLiverList() {
+		return productDao.getLiverList();
+	}
+
+	public List<Product> getExerciseList() {
+		return productDao.getExerciseList();
+	}
+
+	public List<Product> getBrainList() {
+		return productDao.getBrainList();
+	}
+
+	public List<Product> getStomachList() {
+		return productDao.getStomachList();
+	}
+
+	public List<Product> getEyeList() {
+		return productDao.getEyeList();
+	}
+
+	public List<Product> getBoneList() {
+		return productDao.getBoneList();
+	}
+
 }

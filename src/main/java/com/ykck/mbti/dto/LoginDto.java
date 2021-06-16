@@ -1,14 +1,18 @@
 package com.ykck.mbti.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class LoginDto {
-    private int member_Id;
+    private String member_Id;
     private String member_Name;
     private String password;
     private String gender;

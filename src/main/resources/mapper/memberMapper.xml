@@ -4,4 +4,8 @@
 <select id="getMemberList" resultType="com.ykck.mbti.dto.LoginDto">
     select * from member
 </select>
+<select id="insertMember" resultType="com.ykck.mbti.dto.LoginDto">
+    insert into member(memeber_name, password, gender, birth, phonenumber, address
+    values(#{memeber_name},#{password},#{gender},#{birth},#{phonenumber},#{address})
+</select>
 </mapper>

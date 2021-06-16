@@ -4,7 +4,6 @@ package com.ykck.mbti.controller;
 import java.util.List;
 
 import com.ykck.mbti.dto.Category;
-import com.ykck.mbti.dto.Product;
 import com.ykck.mbti.service.CategoryService;
 import com.ykck.mbti.service.ProductService;
 
@@ -54,12 +53,7 @@ public class HomeController {
         return "survey";
     }
     
-    @GetMapping("/products")
-    public String products(Model model){
-    	List<Product> products = productService.getProductList();
-    	model.addAttribute("products", products);
-        return "product/product";
-    }
+    
     
 }
 

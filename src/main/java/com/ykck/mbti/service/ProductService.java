@@ -13,13 +13,40 @@ public class ProductService {
     @Autowired
     ProductDao productDao;
 
-    public List<Product> getProductsList() {
+    public List<Product> getProductList() {
 
-        return productDao.getProductsList();
+        return productDao.getProductList();
     }
 
     public void insertProduct(Product product) {
         productDao.insertProduct(product);
     }
 
+	public List<Product> getLiverList() {
+		return productDao.getLiverList();
+	}
+
+	public List<Product> getExerciseList() {
+		return productDao.getExerciseList();
+	}
+
+	public List<Product> getBrainList() {
+		return productDao.getBrainList();
+	}
+
+	public List<Product> getStomachList() {
+		return productDao.getStomachList();
+	}
+
+	public List<Product> getEyeList() {
+		return productDao.getEyeList();
+	}
+
+	public List<Product> getBoneList() {
+		return productDao.getBoneList();
+	}
+	
+	public Product getProductById(int id) {
+		return productDao.getProductById(id);
+	}
 }

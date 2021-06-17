@@ -16,7 +16,7 @@ public class Product {
     private int price;
     private int perDay;
     private int quantity;
-    private String ingreidients;
+    private String ingredients;
     private String functionality;
     private String imageUrl;
     private int category_Id;

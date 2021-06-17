@@ -210,6 +210,7 @@
                     function getAllQCount(){
                         const map = new Map();
                         var list = [];
+                        var finalList=[];
                         map.set(1,getLiverQCount());
                         map.set(2,getHealthQCount());
                         map.set(3,getBrainQCount());
@@ -226,15 +227,27 @@
                         }
 
                         for(let [key,value] of map){
+                            console.log("sorted:"+key + "," +value);
+                        }
+
+                        for(let [key,value] of map){
                             list.push(key);
                         }
 
+                        finalList.push(list[5]);
+                        finalList.push(list[4]);
+                        finalList.push(list[3]);
+
+                        //alert(finalList[2]);
 
 
-                        $('#typeResult').val(map);
+
+                        $('#first_category_id').val(list[5]);
+                        $('#second_category_id').val(list[4]);
+                        $('#third_category_id').val(list[3]);
                         var form = document.querySelector("#survey_form");
-                        form.action="/api/decide-type";
-                        form.method="POST";
+                        form.action="/mbti/type-result";
+                        form.method="GET";
                         form.submit();
 
                   
@@ -471,15 +484,16 @@
 
                 <div id="survey_wrapper">
                     <!-- <div style="border-top: 2px solid rgb(43, 47, 58); flex: 1 1 0%;"></div> -->
-                    <button type="button" class="btn text-16 btn-default" onclick="getAllQCount()"> 확인 </button>
+                    <button type="button" class="btn text-16 btn-default" onclick="getAllQCount()"> 결과 확인 </button>
                 </div>
 
                 
                 <div id="survey_wrapper">
                     <!-- <div style="border-top: 2px solid rgb(43, 47, 58); flex: 1 1 0%;"></div> -->
                     <form  id="survey_form">
-                        <input type="hidden" id="typeResult"> 
-                        <input type="submit" class="btn text-16 btn-default" onclick="getAllQCount()"> </input>
+                        <input type="hidden" id="first_category_id" name="first_category_id">
+                        <input type="hidden" id="second_category_id" name="second_category_id">
+                        <input type="hidden" id="third_category_id" name="third_category_id"> 
                     </form>
                     
                 </div>

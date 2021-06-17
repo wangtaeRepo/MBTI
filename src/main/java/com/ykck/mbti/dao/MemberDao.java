@@ -12,4 +12,5 @@ import org.springframework.stereotype.Repository;
 public interface MemberDao {
     public List<LoginDto> getMemberList();
     
+    public void insertMember(LoginDto loginDto);
 }

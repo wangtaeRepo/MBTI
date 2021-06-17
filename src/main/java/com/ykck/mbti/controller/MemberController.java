@@ -60,4 +60,15 @@ public class MemberController {
         // "redirect:/mbti/home"; }
 
     }
+
+
+    @PostMapping("/sign")
+    public String postProduct(Model model, @ModelAttribute LoginDto loginDto) {
+        memberService.insertMember(loginDto);
+        model.addAttribute("loginDto", loginDto);
+        System.out.println(loginDto);
+
+        return "redirect:/mbti/home";
+        // log.info("/mbti/sign... POST : " + loginDto.toString());
+    }
 }

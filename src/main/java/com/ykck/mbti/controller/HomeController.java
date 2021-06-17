@@ -45,7 +45,7 @@ public class HomeController {
     public String survey(Model model){
         List<Category> categories = categoryService.getCategoryList();
         model.addAttribute("categories", categories);
-        return "survey";
+        return "type/survey";
     }
     
     @GetMapping("/products")

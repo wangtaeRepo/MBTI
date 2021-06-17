@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <th:block th:replace="~{/layout/index-layout :: setContent(~{this::content})}">
+        <th:block th:fragment="content">
+
+            <head>
+                <style>
+                    div.cart {
+                        /* background: yellow; */
+                        position: relative;
+                        border: 10px;
+                        left: 0;
+                        color: #FC5602;
+                        font-size: 35px;
+                        font-weight: 900;
+                        padding-top: 30px;
+                        padding-bottom: 30px;
+                        text-align: center;
+                    }
+
+                    div.hline {
+                        border-top: 1px solid red;
+                        border-bottom: 30px;
+                    }
+                    div.productbox {
+                        background-color: #ffcdb4;
+
+                        padding: 50px;
+                    }
+                    div.custom-control-input {
+                        }
+
+                    .pl-1,
+                    .px-1 {
+                        padding-left: 0.25rem!important;
+                    }
+                    .pr-1,
+                    .px-1 {
+                        padding-right: 0.25rem!important;
+                    }
+                    .pt-2,
+                    .py-2 {
+                        padding-top: 0.5rem!important;
+                    }
+                    .pb-2,
+                    .py-2 {
+                        padding-bottom: 0.5rem!important;
+                    }
+                    .col-6 {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+                    .col,
+                    .col-1,
+                    .col-10,
+                    .col-11,
+                    .col-12,
+                    .col-2,
+                    .col-3,
+                    .col-4,
+                    .col-5,
+                    .col-6,
+                    .col-7,
+                    .col-8,
+                    .col-9,
+                    .col-auto,
+                    .col-lg,
+                    .col-lg-1,
+                    .col-lg-10,
+                    .col-lg-11,
+                    .col-lg-12,
+                    .col-lg-2,
+                    .col-lg-3,
+                    .col-lg-4,
+                    .col-lg-5,
+                    .col-lg-6,
+                    .col-lg-7,
+                    .col-lg-8,
+                    .col-lg-9,
+                    .col-lg-auto,
+                    .col-md,
+                    .col-md-1,
+                    .col-md-10,
+                    .col-md-11,
+                    .col-md-12,
+                    .col-md-2,
+                    .col-md-3,
+                    .col-md-4,
+                    .col-md-5,
+                    .col-md-6,
+                    .col-md-7,
+                    .col-md-8,
+                    .col-md-9,
+                    .col-md-auto,
+                    .col-sm,
+                    .col-sm-1,
+                    .col-sm-10,
+                    .col-sm-11,
+                    .col-sm-12,
+                    .col-sm-2,
+                    .col-sm-3,
+                    .col-sm-4,
+                    .col-sm-5,
+                    .col-sm-6,
+                    .col-sm-7,
+                    .col-sm-8,
+                    .col-sm-9,
+                    .col-sm-auto,
+                    .col-xl,
+                    .col-xl-1,
+                    .col-xl-10,
+                    .col-xl-11,
+                    .col-xl-12,
+                    .col-xl-2,
+                    .col-xl-3,
+                    .col-xl-4,
+                    .col-xl-5,
+                    .col-xl-6,
+                    .col-xl-7,
+                    .col-xl-8,
+                    .col-xl-9,
+                    .col-xl-auto {
+                        position: relative;
+                        width: 100%;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                    }
+                    .row {
+                        display: flex;
+                    }
+                    .border-bottom {
+                        border-bottom: 1px solid #dee2e6!important;
+                    }
+                    .align-items-center {
+                        align-items: center!important;
+                    }
+                    .pb-1,
+                    .py-1 {
+                        padding-bottom: 0.25rem!important;
+                    }
+                    .pt-1,
+                    .py-1 {
+                        padding-top: 0.25rem!important;
+                    }
+                    .d-flex {
+                        display: flex!important;
+                    }
+                    .mr-3,
+                    .mx-3 {
+                        margin-right: 1rem!important;
+                    }
+                    tr,th{ border-top: none solid;}
+                    div#survey_wrapper{text-align: center;}
+                </style>
+
+                <script text="text/javascript">
+                    function getLiverQCount(){
+                        const query ='input[name="liverQ"]:checked';
+                        const selectedElements = document.querySelectorAll(query);
+                        const selectedElementsCount = selectedElements.length;
+
+                        //alert(selectedElementsCount);
+                        return selectedElementsCount;
+                    }
+
+                    function getHealthQCount(){
+                        const query ='input[name="healthQ"]:checked';
+                        const selectedElements = document.querySelectorAll(query);
+                        const selectedElementsCount = selectedElements.length;
+
+                        return selectedElementsCount;
+                    }
+
+                    function getBrainQCount(){
+                        const query ='input[name="brainQ"]:checked';
+                        const selectedElements = document.querySelectorAll(query);
+                        const selectedElementsCount = selectedElements.length;
+
+                        return selectedElementsCount;
+                    }
+
+                    function getPipiQCount(){
+                        const query ='input[name="pipiQ"]:checked';
+                        const selectedElements = document.querySelectorAll(query);
+                        const selectedElementsCount = selectedElements.length;
+
+                        return selectedElementsCount;
+                    }
+
+                    function getEyeQCount(){
+                        const query ='input[name="eyeQ"]:checked';
+                        const selectedElements = document.querySelectorAll(query);
+                        const selectedElementsCount = selectedElements.length;
+
+                        return selectedElementsCount;
+                    }
+
+                    function getBoneQCount(){
+                        const query ='input[name="boneQ"]:checked';
+                        const selectedElements = document.querySelectorAll(query);
+                        const selectedElementsCount = selectedElements.length;
+                        //alert(selectedElementsCount);
+                        return selectedElementsCount;
+                    }
+
+                    function getKeyByValue(object, value) {
+                        return Object.keys(object).find(key => object[key] === value);
+                    }
+
+                    function getAllQCount(){
+                        const map = new Map();
+                        map.set(1,getLiverQCount());
+                        map.set(2,getHealthQCount());
+                        map.set(3,getBrainQCount());
+                        map.set(4,getPipiQCount());
+                        map.set(5,getEyeQCount());
+                        map.set(6,getBoneQCount());
+
+                        for(let [key,value] of map){
+                            console.log(key + "," +value);
+                        }
+                        
+                        alert(map);
+                    }
+                    
+                </script>
+            </head>
+            <body>
+
+                <div class="container">
+                    <div class="cart">
+                        설문조사
+                    </div>
+              
+                    <table class="table " id="pirogan_survey">
+                        <thead>피로/간</thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <input type="checkbox"
+                                            name='liverQ'
+                                            value="liverQ1"
+                                            onclick="getLiverQCount()">
+                                    &nbsp;&nbsp;&nbsp;8시간 이상 충분한 숙면 후에도 피로해요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='liverQ'
+                                            value="liverQ2"
+                                    onclick="getLiverQCount()">
+                                    &nbsp;&nbsp;&nbsp;고강도의 업무(12시간 이상)를 주 4회 이상 하고 있어요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='liverQ'
+                                            value="liverQ3"
+                                    onclick="getLiverQCount()">
+                                    &nbsp;&nbsp;&nbsp;이전보다 수면시간이 많이 줄었어요.
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table " id="health_survey">
+                        <thead>운동능력</thead>
+                        <tbody>
+                            <tr>
+                                <th >
+                                    <input type="checkbox"
+                                            name='healthQ'
+                                            value="healthQ1"
+                                    onclick="getHealthQCount()">
+                                    &nbsp;&nbsp;&nbsp;신경 및 근육 기능이 예전보다 감소되었어요. (눈떨림, 팔다리 저림 증가)
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='healthQ'
+                                            value="healthQ2"
+                                    onclick="getHealthQCount()">
+                                    &nbsp;&nbsp;&nbsp;신체 지구력이 예전보다 많이 감소되었어요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='healthQ'
+                                            value="healthQ3"
+                                    onclick="getHealthQCount()">
+                                    &nbsp;&nbsp;&nbsp;이전보다 체지방 비율이 증가했어요.
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table " id="brain_survey">
+                        <thead>두뇌활동</thead>
+                        <tbody>
+                            <tr>
+                                <th >
+                                    <input type="checkbox"
+                                            name='brainQ'
+                                            value="brainQ1"
+                                    onclick="getBrainQCount()">
+                                    &nbsp;&nbsp;&nbsp;순간적으로 필요한 단어가 잘 떠오르지 않아요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='brainQ'
+                                            value="brainQ2"
+                                    onclick="getBrainQCount()">
+                                    &nbsp;&nbsp;&nbsp;물건을 뒀던 위치가 잘 기억나지 않아요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='brainQ'
+                                            value="brainQ3"
+                                    onclick="getBrainQCount()">
+                                    &nbsp;&nbsp;&nbsp;전반적으로 기억력이 많이 감소된 것 같아요.
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table " id="pipi_survey">
+                        <thead>위장/비뇨</thead>
+                        <tbody>
+                            <tr>
+                                <th >
+                                    <input type="checkbox"
+                                            name='pipiQ'
+                                            value="pipiQ1"
+                                    onclick="getPipiQCount()">
+                                    &nbsp;&nbsp;&nbsp;배변 활동이 원활하지 않아 답답해요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='pipiQ'
+                                            value="pipiQ2"
+                                    onclick="getPipiQCount()">
+                                    &nbsp;&nbsp;&nbsp;평소 자극적인(맵고 짠) 음식을 자주 섭취해요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='pipiQ'
+                                            value="pipiQ3"
+                                    onclick="getPipiQCount()">
+                                    &nbsp;&nbsp;&nbsp;수면 중이나 급박한 상황에서 소변을 참기 어려워요.
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table " id="eye_survey">
+                        <thead>눈</thead>
+                        <tbody>
+                            <tr>
+                                <th >
+                                    <input type="checkbox"
+                                            name='eyeQ'
+                                            value="eyeQ1"
+                                    onclick="getEyeQCount()">
+                                    &nbsp;&nbsp;&nbsp;눈이 건조해요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='eyeQ'
+                                            value="eyeQ2"
+                                    onclick="getEyeQCount()">
+                                    &nbsp;&nbsp;&nbsp;눈이 자주 피로하고 시큰거려요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='eyeQ'
+                                            value="eyeQ3"
+                                    onclick="getEyeQCount()">
+                                    &nbsp;&nbsp;&nbsp;어두운곳에 들어가면 한참동안 눈앞이 캄캄해요.
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table " id="bone_survey">
+                        <thead>뼈/관절</thead>
+                        <tbody>
+                            <tr>
+                                <th >
+                                    <input type="checkbox"
+                                            name='boneQ'
+                                            value="boneQ1"
+                                    onclick="getBoneQCount()">
+                                    &nbsp;&nbsp;&nbsp;골다공증에 대한 우려가 커요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='boneQ'
+                                            value="boneQ2"
+                                    onclick="getBoneQCount()">
+                                    &nbsp;&nbsp;&nbsp;뼈건강 및 관련 영양소 흡수에 도움되는 성분을 찾고있어요.
+                                </th>
+                            </tr>
+                            <tr>
+                                <th style="border-top: none;">
+                                    <input type="checkbox"
+                                            name='boneQ'
+                                            value="boneQ3"
+                                    onclick="getBoneQCount()">
+                                    &nbsp;&nbsp;&nbsp;관절이 안좋아요.
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="survey_wrapper">
+                    <!-- <div style="border-top: 2px solid rgb(43, 47, 58); flex: 1 1 0%;"></div> -->
+                    <button type="button" class="btn text-16 btn-default" onclick="getAllQCount()"> 확인 </button>
+                </div>
+
+                <div>
+                    <script>
+                        
+                    
+                    </script>
+                </div>
+
+                
+                <div id="survey_wrapper">
+                    <!-- <div style="border-top: 2px solid rgb(43, 47, 58); flex: 1 1 0%;"></div> -->
+                    <button type="button" class="btn text-16 btn-default"> 제출 </button>
+                </div>
+            </body>
+        </th:block>
+    </th:block>
+</html>

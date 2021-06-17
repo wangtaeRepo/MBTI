@@ -107,7 +107,7 @@
               <div class="">
                 <div class="col-md-5 col-sm-5" style="width: 50%; height:400px; float: left;">
                   <!-- 첫번째 영역: -->
-                  <img src="/images/service-single.jpg" class="" style="width: 100%; max-height: 100%;"alt="">
+                  <img th:src='@{/mbti/getImage(imageName=${product.detailImageUrl})}' class="" style="width: 100%; max-height: 100%;"alt="">
                   </div>
                   <div class="col-md-5 col-sm-5" style="width: 50%; height:400px; float: right;">
                   <!-- 두번째 영역:  border:1px solid green;-->

@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ykck.mbti.dao.TypeDao">
 <select id="getTypeById" resultType="com.ykck.mbti.dto.Type">
-    select * from TYPE where type_id = 1
+    select * 
+    from TYPE 
+    where type_Id = #{type_Id}
+    
 </select>
 </mapper>

@@ -45,6 +45,51 @@ public class ProductController {
       return "product/product";
    }
 
+   
+   @GetMapping("/Liverproducts")
+   public String liverproducts(Model model) {
+       List<Product> products = productService.getLiverList();
+       System.out.println(products);
+       model.addAttribute("products", products);
+       return "product/product";
+   }
+   
+   @GetMapping("/Exerciseproducts")
+   public String exerciseproducts(Model model) {
+       List<Product> products = productService.getExerciseList();
+       model.addAttribute("products", products);
+       return "product/product";
+   }
+   
+   @GetMapping("/Brainproducts")
+   public String brainproducts(Model model) {
+       List<Product> products = productService.getBrainList();
+       model.addAttribute("products", products);
+       return "product/product";
+   }
+   
+   @GetMapping("/Stomachproducts")
+   public String stomachproducts(Model model) {
+       List<Product> products = productService.getStomachList();
+       model.addAttribute("products", products);
+       return "product/product";
+   }
+   
+   @GetMapping("/Eyeproducts")
+   public String eyeproducts(Model model) {
+       List<Product> products = productService.getEyeList();
+       model.addAttribute("products", products);
+       return "product/product";
+   }
+   
+   @GetMapping("/Boneproducts")
+   public String boneproducts(Model model) {
+       List<Product> products = productService.getBoneList();
+       model.addAttribute("products", products);
+       return "product/product";
+   }
+   
+
    @GetMapping("/getImage")
    @ResponseBody   
     public ResponseEntity<byte[]>  displayFile(String imageName)throws Exception{      

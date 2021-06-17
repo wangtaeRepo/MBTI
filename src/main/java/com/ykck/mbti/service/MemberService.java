@@ -15,9 +15,11 @@ public class MemberService {
     MemberDao memberDao;
 
     public List<LoginDto> getMemberList(){
-
         return memberDao.getMemberList();
-        
+    }
+
+    public void insertMember(LoginDto loginDto){
+        memberDao.insertMember(loginDto);
     }
 }
 

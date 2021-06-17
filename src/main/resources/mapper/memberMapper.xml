@@ -5,7 +5,7 @@
     select * from member
 </select>
 <select id="insertMember" resultType="com.ykck.mbti.dto.LoginDto">
-    insert into member(memeber_name, password, gender, birth, phonenumber, address
-    values(#{memeber_name},#{password},#{gender},#{birth},#{phonenumber},#{address})
+    insert into member(member_id, member_Name, password, gender, birth, phoneNumber, address, type_id)
+    values(COMMENT_SEQ.NEXTVAL, #{member_Name}, #{password}, #{gender}, #{birth}, #{phoneNumber}, #{address}, 7)
 </select>
 </mapper>

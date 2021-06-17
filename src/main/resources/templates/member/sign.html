@@ -2,53 +2,64 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{/layout/index-layout :: setContent(~{this::content})}">
     <th:block th:fragment="content">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 text-center">
-        <div class="page-caption">
-          <h1 class="page-title">Contact Us</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      <script type="text/javascript" src="/js/member-reg.js"></script>
+      <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script>
+          $("#next").click(function(){
+            if($.trim($("#sch1").val())==''){
+              alert("입력해주세요.");
+              return false;
+            } 
+            $("#next_form").submit();
+          });
+        </script> 
+<!--         
+        <script>	
+        $(document).ready(function(){ 
+          $("#submit").click(function(){
+              if($("#member_Name").val().length==0){ alert("이름을 입력하세요."); $("#member_Name").focus(); return false; }
+              if($("#Email").val().length==0){ alert("이메일을 입력하세요."); $("#Email").focus(); return false; }
+              if($("#Phone").val().length==0){ alert("휴대폰번호를 입력하세요."); $("#Phone").focus(); return false; }
+              if($("#Message").val().length==0){ alert("메세지를 입력하세요."); $("#Message").focus(); return false; }
+            });		
+        });
+        </script>
+         -->      
+
+        <style>
+          input[type=password] {
+font-family: sans-serif !important;
+}
+        </style>
+      </head>
 <!-- /.page header -->
 <div class="content">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4">
         <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="widget widget-contact">
-              <h2 class="widget-title">Follw Us</h2>
+          <div class="col-md-12 col-sm-12" >
+            <div class="widget widget-contact" style="border-radius: 2rem;">
+              <h2 class="widget-title" >Follw Us</h2>
               <hr>
               <address><i class="fa fa-map-marker"></i>
-              873 Fleming Way<br>Richmond, VA 23228 </address>
+              서울특별시 금천구<br>가산 디지털1로 168<br>fn이노에듀 교육장</address>
               <ul class="listnone no-padding">
-                <li><i class="fa fa-phone"></i>800-123-456</li>
-                <li><i class="fa fa-envelope-o"></i>Info@architectural.com</li>
+                <li><i class="fa fa-phone"></i>02-2179-5191</li>
+                <li><i class="fa fa-envelope-o"></i>sehoon9867@naver.com<br>스팸 메일 환영</li>
               </ul>
             </div>
           </div>
           <div class="col-md-12 col-sm-12">
-            <div class="widget widget-follwus">
+            <div class="widget widget-follwus" style="border-radius: 2rem;">
               <h2 class="widget-title">Opening Hours</h2>
               <hr>
               <div class="opening-time">
-                <span>Mon-Fri</span><strong class="pull-right">8:00am-7:00pm</strong><br>
-                <span>Saturday </span><strong class="pull-right">9:00am–5:00pm</strong><br>
-                <span>Sunday </span><strong class="pull-right">9:00am–3:00pm</strong>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <div class="widget widget-follwus">
-              <h2 class="widget-title">Follw Us</h2>
-              <hr>
-              <div class="social-icon">
-                <a href="#" class="solcial-link"><i class="fa fa-facebook-square"></i></a>
-                <a href="#" class="solcial-link"><i class="fa fa-twitter-square"></i></a>
-                <a href="#" class="solcial-link"><i class="fa fa-google-plus-square"></i></a>
+                <span>월요일 - 금요일</span><strong class="pull-right">8:00am-7:00pm</strong><br>
+                <span>토 - 일 </span><strong class="pull-right">CLOSE</strong><br>
+                <span>공휴일 </span><strong class="pull-right">CLOSE</strong>
               </div>
             </div>
           </div>
@@ -57,57 +68,66 @@
       <div class="col-md-8 col-sm-8">
         <div class="row">
           <div class="col-md-12 col-sm-12">
-            <h1>Get In Touch</h1>
-            <p>Complete the form below to speak with one of our experts and find out how we can help.</p>
-            <form class="form">
+            <h1>회원가입</h1>
+            <br>
+            <form id="insertForm">
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-10 control-label" for="textinput">Name <span class="required">*</span></label>  
+                <label class="col-md-10 control-label" for="textinput">아이디 <span class="required">*</span></label>  
                 <div class="col-md-10">
-                <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+                <input id="member_Name" name="member_Name" type="text" placeholder="" class="form-control input-md">
+                </div>
+              </div> 
+
+              <!-- Text input-->
+              <div class="form-group" >
+
+                <label class="col-md-10 control-label" for="textinput">비밀번호 <span class="required">*</span></label>
+                <div class="col-md-10">
+                <input id="textinput" name="password" type="password" placeholder="" class="form-control input-md"> 
+                </div>
+              </div>           
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-10 control-label" for="textinput">성별 <span class="required"></span></label>  
+                <div class="col-md-10">
+                <input id="textinput" name="gender" type="text" placeholder="" class="form-control input-md"> 
                 </div>
               </div>
 
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-10 control-label" for="textinput">password <span class="required">*</span></label>  
+                <label class="col-md-10 control-label" for="textinput">생년월일 <s pan class="required"></s></label>  
                 <div class="col-md-10">
-                <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md"> 
+                <input id="textinput" name="birth" type="text" placeholder="" class="form-control input-md"> 
                 </div>
-              </div>
-
+              </div>              
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-10 control-label" for="textinput">Phone <span class="required">*</span></label>  
+                <label class="col-md-10 control-label" for="textinput">전화번호 <span class="required">*</span></label>  
                 <div class="col-md-10">
-                <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+                <input id="textinput" name="phoneNumber" type="text" placeholder="" class="form-control input-md"> 
                 </div>
               </div>
-
-              <!-- Select Basic -->
+              
+  
+              <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-10 control-label" for="selectbasic">Select Basic</label>
+                <label class="col-md-10 control-label" for="textinput">주소 <span class="required"></span></label>  
                 <div class="col-md-10">
-                  <select id="selectbasic" name="selectbasic" class="form-control">
-                    <option value="1">Option one</option>
-                    <option value="2">Option two</option>
-                  </select>
+                <input id="textinput" name="address" type="text" placeholder="" class="form-control input-md">
+                <div class="input-group mb-3" style="float:right;">
+                  <div class="col-sm-9 input-group-text" ></div><br/>
+                  <!-- <button class="btn btn-outline-secondary col-sm-3" type="button" onclick="signUpMember()">회원가입</button> -->
+                  <div class="form-group" >
+                   <button type="button" class="btn btn-m text-16 btn-primary" onclick="location.href='home'">돌아가기</button>
+                   <button type="button" class="btn btn-m text-16 btn-default" onclick="signUpMember()">회원가입</button>
+                  </div>
+                </div>   
                 </div>
-              </div>
-
-              <!-- Textarea -->
-              <div class="form-group">
-                <label class="col-md-10 control-label" for="textarea">Text Area</label>
-                <div class="col-md-10">                     
-                  <textarea class="form-control" rows="7" id="textarea" name="textarea"></textarea>
-                </div>
-              </div>
-              <div class="col-md-10 col-sm-10">
-                <button id="submit" name="singlebutton" class="btn btn-primary">Submit</button>
-                <span class="required pull-right">* Field Are Required</span>
               </div>
             </form>
-
           </div>
         </div>
       </div>

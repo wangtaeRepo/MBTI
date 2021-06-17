@@ -209,6 +209,7 @@
 
                     function getAllQCount(){
                         const map = new Map();
+                        var list = [];
                         map.set(1,getLiverQCount());
                         map.set(2,getHealthQCount());
                         map.set(3,getBrainQCount());
@@ -219,14 +220,51 @@
                         for(let [key,value] of map){
                             console.log(key + "," +value);
                         }
-                        
-                        alert(map);
+
+                        map[Symbol.iterator] = function* () {
+                            yield* [...this.entries()].sort((a, b) => a[1] - b[1]);
+                        }
+
+                        for(let [key,value] of map){
+                            list.push(key);
+                        }
+
+
+
+                        $('#typeResult').val(map);
+                        var form = document.querySelector("#survey_form");
+                        form.action="/api/decide-type";
+                        form.method="POST";
+                        form.submit();
+
+                  
+
+                        // map = $("form[name=survey_form]").serialize();
+
+                        //let formData = n((ew FormData();
+
+                        //formData.append("countMap",map);
+
+                        // $.ajax({
+                        //     type : 'POST',
+                        //     url : '/api/decide-type',
+                        //     async : true,
+                        //     contentType: 'application/json',
+                        //     data : JSON.stringify(map),
+                        //     dataType : 'json',
+                        //     error: function(xhr,status,error){
+                        //         alert(error);
+                        //     },
+                        //     success : function(json){
+                        //         alert(json)
+                        //     }
+                        // });
+                         
                     }
-                    
+
                 </script>
             </head>
             <body>
-
                 <div class="container">
                     <div class="cart">
                         설문조사
@@ -436,17 +474,14 @@
                     <button type="button" class="btn text-16 btn-default" onclick="getAllQCount()"> 확인 </button>
                 </div>
 
-                <div>
-                    <script>
-                        
-                    
-                    </script>
-                </div>
-
                 
                 <div id="survey_wrapper">
                     <!-- <div style="border-top: 2px solid rgb(43, 47, 58); flex: 1 1 0%;"></div> -->
-                    <button type="button" class="btn text-16 btn-default"> 제출 </button>
+                    <form  id="survey_form">
+                        <input type="hidden" id="typeResult"> 
+                        <input type="submit" class="btn text-16 btn-default" onclick="getAllQCount()"> </input>
+                    </form>
+                    
                 </div>
             </body>
         </th:block>

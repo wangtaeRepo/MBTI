@@ -4,33 +4,55 @@
     th:replace="~{/layout/index-layout :: setContent(~{this::content})}"
   >
     <th:block th:fragment="content">
-      <div>
-        <center>
-          <h1>로그인</h1>
-          <form th:action="@{login}" th:object="${loginDto}" method="post">
-            <label for="member_Id">Username</label>
-            <input
-              type="text"
-              id="member_Id"
-              name="member_Id"
-              autofocus="autofocus"
-            />
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" />
-            <br />
-            <input type="submit" value="LogIn" />
-            <button type="button" onclick="location.href='sign' ">
-              회원가입
-            </button>
-          </form>
-
-          <!-- <label for="name">아이디 : <input type="text" id="id" name="id"></label> <br />
-                <label for="name">비밀번호 : <input type="text" id="pass" name="pass"></label> <br />
-                <input type="submit" value="로그인" onclick="loginOn()"> <br />
-                <input type="submit" value="회원가입" onclick="loginOn()">
-                <th:onclick="'location.href=\''+ @{${/signup}} + '\''"></th:onclick> -->
-        </center>
-      </div>
-    </th:block>
-  </th:block>
-</html>
+      <head>
+        <style>
+          input[type=password] {
+font-family: sans-serif !important;
+}
+        </style>
+      </head>
+        <body>
+            <div class="container" style="width:60%">
+              <center>
+                <div class="Login" style="color : #FC5602; padding-top : 60px; padding-bottom : 30px; font-size : 45px; "> 
+                    Login :)
+                </div>
+                <div class=" mx-n1 mx-md-n3 mt-5 justify-content-center" style="border-top: 2px solid #ffd8c4; padding-bottom : 100px; flex: 10%;">
+                  <br>
+                  <div>
+                     <br>
+                          <form th:action="@{login}" th:object="${loginDto}" method="post">
+                            <label for="member_Id"><h3>아이디 : </h3></label>
+                            <input
+                              type="text"
+                              id="member_Id"
+                              name="member_Id"
+                              autofocus="autofocus"
+                            />
+                            <br>
+                            <label for="password"><h3>비밀번호:</h3></label>
+                            <input type="password" id="password" name="password" />
+                            <br />
+                            <br>
+                            <div class=" mx-n1 mx-md-n3 mt-5 justify-content-center" style="border-top: 2px solid #ffd8c4; padding-bottom : 60px;flex: 10%;">
+                              <br>
+                            <button type="button" class="btn btn-m text-16 btn-primary" onclick="location.href='sign' ">
+                              회원가입
+                            </button>
+                            <input type="submit" class="btn btn-m text-16 btn-default" value="로그인" />
+                          </form>
+                
+                          <!-- <label for="name">아이디 : <input type="text" id="id" name="id"></label> <br />
+                                <label for="name">비밀번호 : <input type="text" id="pass" name="pass"></label> <br />
+                                <input type="submit" value="로그인" onclick="loginOn()"> <br />
+                                <input type="submit" value="회원가입" onclick="loginOn()">
+                                <th:onclick="'location.href=\''+ @{${/signup}} + '\''"></th:onclick> -->
+                        </center>
+                      </div>
+                    </body>
+                    </th:block>
+                  </th:block>
+                </html>
+                
+                
+    

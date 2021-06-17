@@ -45,5 +45,8 @@ public class ProductService {
 	public List<Product> getBoneList() {
 		return productDao.getBoneList();
 	}
-
+	
+	public Product getProductById(int id) {
+		return productDao.getProductById(id);
+	}
 }

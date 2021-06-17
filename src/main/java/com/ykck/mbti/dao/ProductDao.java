@@ -5,6 +5,7 @@ import java.util.List;
 import com.ykck.mbti.dto.Product;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Mapper
@@ -26,5 +27,5 @@ public interface ProductDao {
 
 	public List<Product> getBoneList();
 
-    
+    public Product getProductById(@Param("product_Id")int id);
 }

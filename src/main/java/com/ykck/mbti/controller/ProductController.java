@@ -14,7 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ykck.mbti.dto.Product;
@@ -28,7 +30,10 @@ public class ProductController {
     ProductService productService;
 
    @GetMapping("/product-detail")
-   public String home() {
+   public String home(@RequestParam("product_Id") int product_Id, Model model) {
+	   System.out.println(product_Id);
+	   Product product = productService.getProductById(product_Id);
+	   model.addAttribute("product", product);
 
       return "product/product-detail";
 

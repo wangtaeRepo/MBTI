@@ -7,7 +7,7 @@
 
 <select id="getLiverList" resultType="com.ykck.mbti.dto.Product">
 	select 
-	product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
 	from Product pro, Category ca
 	where pro.Category_Id = ca.Category_Id 
 	and pro.category_id=1
@@ -15,7 +15,7 @@
 
 <select id="getExerciseList" resultType="com.ykck.mbti.dto.Product">
 	select 
-	product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
 	from Product pro, Category ca
 	where pro.Category_Id = ca.Category_Id 
 	and pro.category_id=2
@@ -23,7 +23,7 @@
 
 <select id="getBrainList" resultType="com.ykck.mbti.dto.Product">
 	select 
-	product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
 	from Product pro, Category ca
 	where pro.Category_Id = ca.Category_Id 
 	and pro.Category_Id=3
@@ -31,7 +31,7 @@
 	
 <select id="getStomachList" resultType="com.ykck.mbti.dto.Product">
 	select 
-	product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
 	from Product pro, Category ca
 	where pro.Category_Id = ca.Category_Id 
 	and pro.Category_Id=4
@@ -39,7 +39,7 @@
 	
 <select id="getEyeList" resultType="com.ykck.mbti.dto.Product">
 	select 
-	product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
 	from Product pro, Category ca
 	where pro.Category_Id = ca.Category_Id 
 	and pro.Category_Id=5
@@ -47,9 +47,16 @@
 
 <select id="getBoneList" resultType="com.ykck.mbti.dto.Product">
 	select 
-	product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
 	from Product pro, Category ca
 	where pro.Category_Id = ca.Category_Id 
 	and pro.Category_Id=6
 </select>
+
+<select id="getProductById" resultType="com.ykck.mbti.dto.Product">
+	select *
+	from Product
+	where product_Id = #{product_Id}
+</select>
+
 </mapper>

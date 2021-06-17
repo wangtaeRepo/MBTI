@@ -111,17 +111,17 @@
                   </div>
                   <div class="col-md-5 col-sm-5" style="width: 50%; height:400px; float: right;">
                   <!-- 두번째 영역:  border:1px solid green;-->
-                    <h2>건조한 눈엔 닥터보이어 60정</h2>
-                    <p>Dr.voir  30일분</p>
-                    <h3>49000원</h3>
+                    <h2><td th:text= "${product.product_Name}"></td></h2>
+                    <p><td th:text= "${product.corporate}"></td>  <td th:text= "${product.perDay}+일분"></td></p>
+                    <h3><td th:text= "${product.price}+원"></td></h3>
                     <hr>
-                    <p>건조한 눈엔 닥터보이어 60정</p>
+                    <p><td th:text= "${product.product_Name}"><td th:text= "${product.quantity}+정"></td></td></p>
                     <p>
                     <div style="width: 50%;float:left;">배송비</div>
                     <div style="width: 50%;float:right;text-align: right;">+3000원</div>
                   </p>
                     <div style="width: 50%;float:left;"><h3>총 상품 금액</h3></div>
-                    <div style="width: 50%;float:right;text-align: right;"><h3>52000원</h3></div>
+                    <div style="width: 50%;float:right;text-align: right;"><h3><td th:text= "${product.price}+3000+원"></td></h3></div>
                        
                     <div>
                        <div class="row">

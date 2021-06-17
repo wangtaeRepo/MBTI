@@ -19,6 +19,7 @@ public class Product {
     private String ingredients;
     private String functionality;
     private String imageUrl;
+    private String detailImageUrl;
     private int category_Id;
     
 }

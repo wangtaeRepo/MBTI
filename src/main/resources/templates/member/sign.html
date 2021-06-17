@@ -5,7 +5,16 @@
       <script type="text/javascript" src="/js/member-reg.js"></script>
       <head>
         <meta charset="utf-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script>
+          $("#next").click(function(){
+            if($.trim($("#sch1").val())==''){
+              alert("입력해주세요.");
+              return false;
+            } 
+            $("#next_form").submit();
+          });
+        </script> 
 <!--         
         <script>	
         $(document).ready(function(){ 
@@ -17,7 +26,7 @@
             });		
         });
         </script>
-         -->
+         -->      
 
         <style>
           input[type=password] {
@@ -25,26 +34,15 @@ font-family: sans-serif !important;
 }
         </style>
       </head>
-<!-- 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 text-center">
-        <div class="page-caption">
-          <h1 class="page-title">Contact Us</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 <!-- /.page header -->
 <div class="content">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4">
         <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="widget widget-contact">
-              <h2 class="widget-title">Follw Us</h2>
+          <div class="col-md-12 col-sm-12" >
+            <div class="widget widget-contact" style="border-radius: 2rem;">
+              <h2 class="widget-title" >Follw Us</h2>
               <hr>
               <address><i class="fa fa-map-marker"></i>
               서울특별시 금천구<br>가산 디지털1로 168<br>fn이노에듀 교육장</address>
@@ -55,7 +53,7 @@ font-family: sans-serif !important;
             </div>
           </div>
           <div class="col-md-12 col-sm-12">
-            <div class="widget widget-follwus">
+            <div class="widget widget-follwus" style="border-radius: 2rem;">
               <h2 class="widget-title">Opening Hours</h2>
               <hr>
               <div class="opening-time">
@@ -77,7 +75,7 @@ font-family: sans-serif !important;
               <div class="form-group">
                 <label class="col-md-10 control-label" for="textinput">아이디 <span class="required">*</span></label>  
                 <div class="col-md-10">
-                <input id="textinput" name="member_Name" type="text" placeholder="" class="form-control input-md">
+                <input id="member_Name" name="member_Name" type="text" placeholder="" class="form-control input-md">
                 </div>
               </div> 
 

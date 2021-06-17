@@ -20,7 +20,7 @@
 
       <tr th:each="products : ${products}">
         
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-3 col-sm-3" style="margin-bottom: 30px;">
           <div style="border-radius: 1rem; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 20px -11px #000000;">
               <!-- <div class="service-img mb10" ><a th:href="product-detail"><img th:src="${products.imageUrl}" class="img-responsive"style="border-top-left-radius: 1rem; border-top-right-radius: 1rem; " alt="" ></a></div> -->
               <div class="service-img mb10" ><a th:href="@{/mbti/product-detail(product_Id=${products.product_Id})}"><img th:src= '@{/mbti/getImage(imageName=${products.imageUrl})}' class="img-responsive"style="border-top-left-radius: 1rem; border-top-right-radius: 1rem; " alt="" ></a></div>

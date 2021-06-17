@@ -15,4 +15,6 @@ public class Type {
     private int first_category_id;
     private int second_category_id;
     private String image_url;
+    private String comments;
+    private String descriptions;
 }

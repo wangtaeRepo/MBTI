@@ -28,4 +28,6 @@ public interface ProductDao {
 	public List<Product> getBoneList();
 
     public Product getProductById(@Param("product_Id")int id);
+
+    public List<Product> getProductByCategoryId(int first_category_id);
 }

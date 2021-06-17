@@ -87,16 +87,14 @@ margin-right: 1rem!important;
                 <div class="container" style="border-radius: 3rem; background-color: #fafafa; margin:80px; margin-top:0px; height: 500px;width: 35%; float:left;">
                     <div style="margin: 10%;">
                         <p>당신의 건강 유형은 : </p>
-                        <h1>아이언맨</h1>
-                        <img src="/images/products/eye1.jpg" style="height:320px; width: 320px;" alt="">
-    
+                        <h1><td th:text= "${type.type_name}"></td></h1>
+                        <img th:src= '@{/mbti/getImage(imageName=${type.image_url})}' style="height:320px; width: 320px;" alt="">
+                        <br></br>
+                        <h3><td th:text= "${type.comments}"></td></h3>
                     </div>
                 </div>
-            
             </div>
-            
         </div>
-        
         
         <div class="container" style="width: 100%; min-height:300px; background-color: #ffffff;">
             <div style="padding:100px">
@@ -104,99 +102,53 @@ margin-right: 1rem!important;
                 <div class="container" style="border-radius: 3rem; background-color: #fff8f5; margin:80px; margin-top:-580px; min-height: 700px;width: 50%; float:right;">
                     
                     <div class="md-4" style="margin: 40px;">
-                        <h1>아이언맨</h1>
+                        <h1>추천 영양제</h1>
 
                         <hr style="border-top: 2px solid #FC5602; flex: 10%;">
-                        <h4>아직도 가족과 동료의 추천으로 고민하시나요? 사람마다 필요한 영양소와 적정섭취량은 모두 다르기에 전문적인 추천이 필요합니다아직도 가족과 동료의 추천으로 고민하시나요? 사람마다 필요한 영양소와 적정섭취량은 모두 다르기에 전문적인 추천이 필요합니다.</h4>
-                        <h3>필요한 건강기능식품</h3>
-                        <h3>3개</h3>
-                        <hr style="border-top: 2px solid #a7a7a7; flex: 10%;">
-
-
-
+                        
                         <div style="margin-top: 50px;">
-                            <h1 style="color: #FC5602;">눈</h1>
-                            <h4>아직도 가족과 동료의 추천으로 고민하시나요? 사람마다 필요한 영양소와 적정섭취량은 모두 다르기에 전문적인 추천이 필요합니다아직도 가족과 동료의 추천으로 고민하시나요? 사람마다 필요한 영양소와 적정섭취량은 모두 다르기에 전문적인 추천이 필요합니다.</h4>
+                            <h1 style="color: #FC5602;" th:text= "${firstCategory.category_Name}"></h1>
+                            <h4 th:text= "${type.descriptions}"></h4>
+                           
                             <p>나만을 위한 추천 영양제</p>
+                            <tr th:each="product : ${products}">
                             <div>
                                   <div class="" style="background-color: #ffffff; border-radius: 1rem;">
+                                    
                                     <table class="  display:table"  style="margin-bottom: -1px">
                                         <colgroup>
                                             <col style="width: 15%; height: 100%;" />
                                             <col style="width: 80%; height: 100%;" />
                                         </colgroup>
                                         <tbody>
-                                            <tr>
                                                 <th>
                                                      <div class="mr-3 bg-img" style="min-width: 110px; width: 110px; min-height: 110px;">
                                                         
-                                                        <img src= "/images/products/eye1.jpg" style=" border-bottom-left-radius: 1rem; border-top-left-radius: 1rem;">
+                                                        <img th:src= '@{/mbti/getImage(imageName=${product.imageUrl})}' style=" border-bottom-left-radius: 1rem; border-top-left-radius: 1rem;">
                                                     </div>
                                                 </th>
                                             <td>
                                                 <div style="width: 100%; height:110px;float:left; margin-left:10px;">
-                                                    <h3>건조한 눈엔 닥터보이어 60정</h3>
-                                                    <h>Dr.voir  30일분</h>
-                                                    <h4>49000원</h4>
-                                                    
+                                                    <a th:href="@{/mbti/product-detail(product_Id=${product.product_Id})}"><h3 th:text= "${product.product_Name}"></h3></a> 
+                                                    <h3 th:text= "${product.corporate}"></h3>
+                                                    <!-- <h th:text= "${product.quantity}">정</h><h th:text= "${product.perDay}">일분</h>  -->
+                                                    <h4 th:text= "${product.price}">원</h4>
                                                 </div>
                                             </td>
-                                            </tr>
-                                            
+                                            <br></br>
+
                                         </tbody>
                                     </table>
                                 </div>
+                            </tr>
                             </div>
+                        
                         </div>
-
-
-                        <div style="margin-top: 50px;">
-                            <h1 style="color: #FC5602;">눈</h1>
-                            <h4>아직도 가족과 동료의 추천으로 고민하시나요? 사람마다 필요한 영양소와 적정섭취량은 모두 다르기에 전문적인 추천이 필요합니다아직도 가족과 동료의 추천으로 고민하시나요? 사람마다 필요한 영양소와 적정섭취량은 모두 다르기에 전문적인 추천이 필요합니다.</h4>
-                            <p>나만을 위한 추천 영양제</p>
-                            <div>
-                                  <div class="" style="background-color: rgb(255, 255, 255); border-radius: 1rem;">
-                                    <table class="  display:table"  style="margin-bottom: -1px">
-                                        <colgroup>
-                                            <col style="width: 15%; height: 100%;" />
-                                            <col style="width: 80%; height: 100%;" />
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <th>
-                                                     <div class="mr-3 bg-img" style="min-width: 110px; width: 110px; min-height: 110px;">
-                                                        
-                                                        <img src= "/images/products/eye1.jpg" style=" border-bottom-left-radius: 1rem; border-top-left-radius: 1rem;">
-                                                    </div>
-                                                </th>
-                                            <td>
-                                                <div style="width: 100%; height:110px;float:left; margin-left:10px;">
-                                                    <h3>건조한 눈엔 닥터보이어 60정</h3>
-                                                    <h>Dr.voir  30일분</h>
-                                                    <h4>49000원</h4>
-                                                    
-                                                </div>
-                                            </td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
+                    
                     </div>
                 </div>
-
-
             </div>
-            
-
-
-        </div>
-            
-
-        
+        </div>       
     </body>
     </th:block>
 </th:block>

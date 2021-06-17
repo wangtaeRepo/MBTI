@@ -59,4 +59,12 @@
 	where product_Id = #{product_Id}
 </select>
 
+<select id="getProductByCategoryId" resultType="com.ykck.mbti.dto.Product">
+	select 
+	product_Id, product_Name,corporate, price, perDay, quantity, ingredients, functionality, imageUrl
+	from Product pro, Category ca
+	where pro.Category_Id = ca.Category_Id 
+	and pro.Category_Id=#{first_category_id}
+</select>
+
 </mapper>

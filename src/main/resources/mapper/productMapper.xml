@@ -53,6 +53,7 @@
 	and pro.Category_Id=6
 </select>
 
+
 <select id="getProductById" resultType="com.ykck.mbti.dto.Product">
 	select *
 	from Product

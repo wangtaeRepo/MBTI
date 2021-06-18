@@ -92,6 +92,13 @@ public class ProductController {
        model.addAttribute("products", products);
        return "product/product";
    }
+
+   @GetMapping("/recommendedProducts")
+   public String recommendedProducts(Model model) {
+       List<Product> products = productService.getBoneList();
+       model.addAttribute("products", products);
+       return "product/product";
+   }
    
 
    @GetMapping("/getImage")

@@ -28,6 +28,7 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    //제품 상세페이지 맵핑
    @GetMapping("/product-detail")
    public String home(@RequestParam("product_Id") int product_Id, Model model) {
 	   System.out.println(product_Id);
@@ -37,7 +38,7 @@ public class ProductController {
       return "product/product-detail";
 
    }
-
+   //제품 전체 페이지
    @GetMapping("/products")
    public String products(Model model) {
       List<Product> products = productService.getProductList();
@@ -49,7 +50,7 @@ public class ProductController {
       return "product/product";
    }
 
-   
+   // 피로/간
    @GetMapping("/Liverproducts")
    public String liverproducts(Model model) {
        List<Product> products = productService.getLiverList();
@@ -57,35 +58,35 @@ public class ProductController {
        model.addAttribute("products", products);
        return "product/product";
    }
-   
+   // 체지방/운동능력
    @GetMapping("/Exerciseproducts")
    public String exerciseproducts(Model model) {
        List<Product> products = productService.getExerciseList();
        model.addAttribute("products", products);
        return "product/product";
    }
-   
+   // 두뇌
    @GetMapping("/Brainproducts")
    public String brainproducts(Model model) {
        List<Product> products = productService.getBrainList();
        model.addAttribute("products", products);
        return "product/product";
    }
-   
+   // 위장/비뇨
    @GetMapping("/Stomachproducts")
    public String stomachproducts(Model model) {
        List<Product> products = productService.getStomachList();
        model.addAttribute("products", products);
        return "product/product";
    }
-   
+   // 눈
    @GetMapping("/Eyeproducts")
    public String eyeproducts(Model model) {
        List<Product> products = productService.getEyeList();
        model.addAttribute("products", products);
        return "product/product";
    }
-   
+   // 뼈/관절
    @GetMapping("/Boneproducts")
    public String boneproducts(Model model) {
        List<Product> products = productService.getBoneList();
@@ -100,7 +101,7 @@ public class ProductController {
        return "product/product";
    }
    
-
+  
    @GetMapping("/getImage")
    @ResponseBody   
     public ResponseEntity<byte[]>  displayFile(String imageName)throws Exception{      

@@ -7,34 +7,35 @@
       <head>
         <style>
           input[type=password] {
-font-family: sans-serif !important;
+            font-family: jua;
 }
-        </style>
+        </style> 
       </head>
         <body>
-            <div class="container" style="width:60%">
+            <div class="container" style="width:25%">
               <center>
-                <div class="Login" style="color : #FC5602; padding-top : 60px; padding-bottom : 30px; font-size : 45px; "> 
+                <div class="Login" style="color : #FC5602; padding-top : 60px; padding-bottom : 20px; font-size : 45px; "> 
                     Login :)
                 </div>
-                <div class=" mx-n1 mx-md-n3 mt-5 justify-content-center" style="border-top: 2px solid #ffd8c4; padding-bottom : 100px; flex: 10%;">
-                  <br>
+                <div class=" mx-n1 mx-md-n3 mt-5 justify-content-center" style="border-top: 2px solid #ffd8c4; padding-bottom : 80px; padding-top : 10px; flex: 10%;">
+
                   <div>
                      <br>
                           <form th:action="@{login}" th:object="${loginDto}" method="post">
-                            <label for="member_Id"><h3>아이디 : </h3></label>
                             <input
                               type="text"
                               id="member_Id"
                               name="member_Id"
                               autofocus="autofocus"
+                              class="form-control"
+                              placeholder="아이디"
+                              style="font-family: jua;"
                             />
-                            <br>
-                            <label for="password"><h3>비밀번호:</h3></label>
-                            <input type="password" id="password" name="password" />
+
+                            <input type="password" id="password" name="password" class="form-control"  placeholder="비밀번호"/> 
                             <br />
-                            <br>
-                            <div class=" mx-n1 mx-md-n3 mt-5 justify-content-center" style="border-top: 2px solid #ffd8c4; padding-bottom : 60px;flex: 10%;">
+
+                            <div class=" mx-n1 mx-md-n3 mt-5 justify-content-center" style="border-top: 2px solid #ffd8c4; padding-bottom : 90px ;flex: 10%;">
                               <br>
                             <button type="button" class="btn btn-m text-16 btn-primary" onclick="location.href='sign' ">
                               회원가입

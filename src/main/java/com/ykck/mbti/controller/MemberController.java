@@ -68,7 +68,7 @@ public class MemberController {
         model.addAttribute("loginDto", loginDto);
         System.out.println(loginDto);
 
-        return "redirect:/mbti/home";
+        return "redirect:/mbti/survey";
         // log.info("/mbti/sign... POST : " + loginDto.toString());
     }
 }

@@ -6,6 +6,7 @@ import com.ykck.mbti.dto.Category;
 import com.ykck.mbti.dto.Product;
 import com.ykck.mbti.dto.Type;
 import com.ykck.mbti.service.CategoryService;
+import com.ykck.mbti.service.MemberService;
 import com.ykck.mbti.service.ProductService;
 import com.ykck.mbti.service.TypeService;
 
@@ -29,6 +30,9 @@ public class TypeController {
     @Autowired
     ProductService productService;
 
+    @Autowired
+    MemberService memberService;
+
     @GetMapping("/type-result")
     public String getTypeByCount(@RequestParam("first_category_id") int first_category_id,@RequestParam("second_category_id") int second_category_id,@RequestParam("third_category_id") int third_category_id, Model model){
 
@@ -37,6 +41,9 @@ public class TypeController {
         Category firstCategory = categoryService.getCategoryByFirst(first_category_id);
 
         List<Product> products = productService.getProductByCategoryId(first_category_id);
+
+        //type_Id = type.getType_id();
+        //memberService.updateMemberType(type_Id);
 
         System.out.println(type.getType_name());
         model.addAttribute("type", type);

@@ -13,4 +13,6 @@ public interface MemberDao {
     public List<LoginDto> getMemberList();
     
     public void insertMember(LoginDto loginDto);
+
+    public void updateMemberType(int type_id);
 }

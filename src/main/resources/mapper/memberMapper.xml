@@ -8,4 +8,14 @@
     insert into member(member_id, member_Name, password, gender, birth, phoneNumber, address, type_id)
     values(COMMENT_SEQ.NEXTVAL, #{member_Name}, #{password}, #{gender}, #{birth}, #{phoneNumber}, #{address}, 7)
 </select>
+
+<update id="updateMemberType" parameterType="com.ykck.mbti.dto.LoginDto"  >
+<![CDATA[
+    update member set type_Id = #{type_Id} 
+    where member_id = (select member_id from 
+    (select * from member order by ROWID desc) where ROWNUM<2]]>
+</update>
+
+
+
 </mapper>

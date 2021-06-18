@@ -21,6 +21,10 @@ public class MemberService {
     public void insertMember(LoginDto loginDto){
         memberDao.insertMember(loginDto);
     }
+
+    public void updateMemberType(int type_id) {
+        memberDao.updateMemberType(type_id);
+    }
 }
 
 

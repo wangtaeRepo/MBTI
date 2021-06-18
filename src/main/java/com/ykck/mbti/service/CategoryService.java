@@ -18,4 +18,8 @@ public class CategoryService {
         return categoryDao.getCategoryList();
 
     }
+
+    public Category getCategoryByFirst(int first_category_id) {
+        return categoryDao.getCategoryByFirst(first_category_id);
+    }
 }

@@ -16,4 +16,8 @@ public class TypeService {
         return typeDao.getTypeById(type_id);
     }
 
+    public Type getTypeByCount(int first_category_id, int second_category_id, int third_category_id) {
+        return typeDao.getTypeByCount(first_category_id,second_category_id,third_category_id);
+    }
+
 }

@@ -3,6 +3,8 @@ package com.ykck.mbti.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.ykck.mbti.dto.Category;
 import com.ykck.mbti.service.CategoryService;
 import com.ykck.mbti.service.ProductService;
@@ -26,8 +28,8 @@ public class HomeController {
 
     @GetMapping("/home")
     public String home(){
-        
-        return "home";
+
+        return "index";
     }
 
  

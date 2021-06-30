@@ -38,10 +38,14 @@ veterinary cardiology website, pediatric cardiology website">
         <div class="top-link">
           <div class="row">
             <div class="col-md-5">
-             <h1>MBTI</h1>
+             <h1><a href="home"> MBTI</a></h1>
             </div>
             <div class="col-md-7">
-              <a href="login">로그인/회원가입</a>
+              <a href=login th:if="${SID eq null}" >로그인/회원가입</a>
+              <th:block th:unless="${SID eq null}">
+                <h3>[[${SID}]]님</h3>
+                <a href="logout">로그아웃</a>
+              </th:block>
             </div>
             <div class="col-md-7">
               <a href="cart">장바구니</a>

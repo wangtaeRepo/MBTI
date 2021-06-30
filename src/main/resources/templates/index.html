@@ -40,7 +40,11 @@ veterinary cardiology website, pediatric cardiology website">
              <h1><a href="home"> MBTI</a></h1>
             </div>
             <div class="col-md-7">
-              <a href="login">로그인/회원가입</a>
+              <a href="login" th:if="${SID eq null}" >로그인/회원가입</a>
+              <th:block th:unless="${SID eq null}">
+                <h3>[[${SID}]]님</h3>
+                <a href="logout">로그아웃</a>
+              </th:block>
             </div>
             <div class="col-md-7">
               <a href="cart">장바구니</a>
@@ -230,7 +234,7 @@ veterinary cardiology website, pediatric cardiology website">
         <h1 class="text-white">나의 MBTI는 무엇일까?</h1>
       </div>
       <div class="col-md-3 col-sm-3">
-        <a href="#" class="btn btn-primary">MBTI 확인</a>
+        <a href="survey" class="btn btn-primary">MBTI 확인</a>
       </div>
     </div>
   </div>

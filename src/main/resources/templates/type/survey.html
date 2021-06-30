@@ -245,6 +245,7 @@
                         $('#first_category_id').val(list[5]);
                         $('#second_category_id').val(list[4]);
                         $('#third_category_id').val(list[3]);
+                        $('#type_Id').val(0);
                         var form = document.querySelector("#survey_form");
                         form.action="/mbti/type-result";
                         form.method="GET";
@@ -493,7 +494,8 @@
                     <form  id="survey_form">
                         <input type="hidden" id="first_category_id" name="first_category_id">
                         <input type="hidden" id="second_category_id" name="second_category_id">
-                        <input type="hidden" id="third_category_id" name="third_category_id"> 
+                        <input type="hidden" id="third_category_id" name="third_category_id">
+                        <input type="hidden" id="type_Id" name="type_Id"> 
                     </form>
                     
                 </div>
